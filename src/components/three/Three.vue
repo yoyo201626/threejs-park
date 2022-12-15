@@ -20,7 +20,6 @@ import gsap from "gsap";
 import fragment from "./shaders/fragment.js";
 import fragmentGress from "./shaders/fragmentGress.js";
 import vertex from "./shaders/vertex.js";
-import {MeshPhongMaterial, ShaderMaterial} from "three";
 
 const gui = new dat.GUI();
 export default {
@@ -106,6 +105,7 @@ export default {
           content: che
         }
         viewer.addAnimate(tiemen)
+
       }, (progress) => {
         progress = Math.floor(progress * 100)
         jindu_text.innerText = progress + '%';
@@ -203,31 +203,59 @@ export default {
         let v = {
           x: Math.abs(box.max.x - box.min.x),
           y: Math.abs(box.max.y - box.min.y),
-          z: Math.abs(box.max.z - box.min.z)
+          z: Math.abs(box.max.z - box.min.z),
         }
         console.log(v)
+        //创建球体
+        // let geometry = new THREE.SphereGeometry(v.x, v.z); //矩形平面
+        // //创建材质
+        // let material = new THREE.ShaderMaterial({
+        //   color: 0xffffff,
+        //   vertexShader: vertex,
+        //   fragmentShader: fragmentGress,
+        //   uniforms: uniforms,
+        //   //启用深度测试
+        //   depthTest: true,
+        //   //透明度
+        //   transparent: true,
+        //   //混合模式
+        //   blending: THREE.AdditiveBlending,
+        //   //混合因子
+        //   blendSrc: THREE.SrcAlphaFactor,
+        //   blendDst: THREE.OneFactor,
+        //   blendEquation: THREE.AddEquation,
+        //   //深度写入
+        // }); //材质对象Material
+        // //创建网格模型对象
+        // let mesh = new THREE.Mesh(geometry, material);
+        // mesh.position.y = v.y / 2
+        // console.log(mesh)
+        // _model.object.add(mesh)
+        // viewer.addAnimate({
+        //   fun: (uniforms) => {
+        //     uniforms.iTime.value += 0.01;
+        //   },
+        //   content: material.uniforms
+        // })
 
         _model.forEach((item, index) => {
           //创建点
           if (item.isMesh) {
-            let points = new THREE.InstancedMesh(item.geometry, new ShaderMaterial({
-              uniforms: uniforms,
-              vertexShader: vertex,
-              fragmentShader: fragmentGress,
-              transparent: true,
-              depthTest: false,
-              depthWrite: false
-            }), 10);
-            points.position.set(item.position.x, item.position.y, item.position.z)
-            points.rotation.set(item.rotation.x, item.rotation.y, item.rotation.z)
-            points.scale.set(item.scale.x, item.scale.y, item.scale.z)
-            _model.object.add(points)
-            viewer.addAnimate({
-              fun: (uniforms) => {
-                uniforms.iTime.value += 0.01;
-              },
-              content: points.material.uniforms
-            })
+            // item.material = new ShaderMaterial({
+            //   uniforms: uniforms,
+            //   vertexShader: vertex,
+            //   fragmentShader: fragment,
+            //   transparent: true,
+            //   side: THREE.DoubleSide,
+            //   opacity: 1
+            // })
+            // item.material.needsUpdate = true
+            // viewer.addAnimate({
+            //   fun: (uniforms) => {
+            //     uniforms.iTime.value += 0.01;
+            //   },
+            //   content: item.material.uniforms
+            // })
           }
         })
         //圆形包围盒
@@ -359,18 +387,40 @@ export default {
       })
 
       modeloader.loadModelToScene('zuo.glb', _model => {
-        _model.openCastShadow()
-        _model.object.rotateY(Math.PI / 2)
-        _model.object.position.set(-10, 0, 9)
-        _model.object.scale.set(0.2, 0.2, 0.2)
-        _model.object.name = '实验楼'
-        let box = _model.getBox()
+        this.office = _model
+        this.office.openCastShadow()
+        this.office.openReceiveShadow()
+        //旋转360度
+        this.office.object.rotation.y = Math.PI
+        this.office.object.position.set(16, 0, -5)
+        this.office.object.scale.set(0.2, 0.2, 0.2)
+        this.office.object.name = '办公大厅'
+        this.office.object.children.forEach(item => {
+          item.name = item.name.replace('zuo', '')
+          if (item.name == 'ding') {
+            item.name = 6
+          }
+          item.name--
+        })
+        this.office.object.children.sort((a, b) => a.name - b.name).forEach(v => {
+          v.name = 'zuo' + v.name
+        })
+        this.office.forEach(child => {
+          if (child.isMesh) {
+            child.frustumCulled = false
+            child.material.emissive = child.material.color;
+            child.material.emissiveMap = child.material.map;
+            child.material.emissiveIntensity = 1.2
+            child.material.envmap = viewer.scene.background
+          }
+        })
+        this.oldOffice = this.office.object.clone()
+        let box = this.office.getBox()
         labels.addCss2dLabel({
-          x: box.max.x,
+          x: box.max.x / 2,
           y: box.max.y,
-          z: box.max.z / 2
+          z: box.max.z
         }, `<span class="label">${_model.object.name}</span>`)
-        labels.label.castShadow = true
         gsap.to(labels.label.position, {
           y: box.max.y + 2,
           repeat: -1,

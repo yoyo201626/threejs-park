@@ -22,7 +22,8 @@ export default class DsModel {
      */
     getBox() {
         this.object.updateMatrixWorld()
-        return new THREE.Box3().setFromObject(this.object)
+        const box = new THREE.Box3().setFromObject(this.object)
+        return box
     }
 
     /**
@@ -46,6 +47,16 @@ export default class DsModel {
      */
     setScalc(x, y, z) {
         this.object.scale.set(x, y || x, z || x)
+    }
+
+    /**
+     * 求模型的长宽高
+     */
+    getLength() {
+        const box = new THREE.Box3();
+        box.setFromObject(this.object);
+        const size = box.getSize(new THREE.Vector3())
+        return size
     }
 
     /**

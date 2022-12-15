@@ -42,6 +42,7 @@ export default class Viewer {
         const axis = new AxesHelper(1000)
         this.scene.add(axis)
     }
+
     /**
      * 添加状态监测
      */
@@ -191,6 +192,7 @@ export default class Viewer {
             // preserveDrawingBuffer: false, // true/false 表示是否保存绘图缓冲
             // physicallyCorrectLights: true, // true/false 表示是否开启物理光照
         })
+        this.renderer.clearDepth();
         // this.renderer.domElement.style.zIndex = 1
         // 默认情况下，js的光强数值不真实。为了使得光强更趋于真实值，应该把渲染器的physicallyCorrectLights属性设为true
         // this.renderer.physicallyCorrectLights = true

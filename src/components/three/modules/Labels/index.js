@@ -35,7 +35,8 @@ export default class Labels {
 
   /**
    * 添加3d 标签
-   * @param option
+   * @param position 位置
+   * @param html html内容
    */
   addCss2dLabel (position = { x: 0, y: 0, z: 0 }, html = '') {
     const div = document.createElement('div')

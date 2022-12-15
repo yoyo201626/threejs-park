@@ -1,15 +1,15 @@
-import Viewer from './Viewer'
-import SkyBoxs from './SkyBoxs'
-import ModelLoder from './ModelLoder'
-import DsModel from './DsModel'
-import Weather from './Weather'
-import AnimatedTracks from './AnimatedTracks'
-import Lights from './Lights'
-import MouseEvent from './MouseEvent'
-import Labels from './Labels'
-import PathLine from './PathLine'
-import Floors from './Floors'
-import EffectComposer from './EffectComposer'
+import Viewer from './Viewer' // 场景
+import SkyBoxs from './SkyBoxs' // 天空盒
+import ModelLoder from './ModelLoder' // 模型加载器
+import DsModel from './DsModel' // 模型
+import Weather from './Weather' // 天气
+import AnimatedTracks from './AnimatedTracks' // 动画轨迹
+import Lights from './Lights' // 光源
+import MouseEvent from './MouseEvent' // 鼠标事件
+import Labels from './Labels' // 标签
+import PathLine from './PathLine' // 路径线
+import Floors from './Floors' // 楼层
+import EffectComposer from './EffectComposer' // 后期处理
 
 const modules = {
   Viewer, // 场景初始化
