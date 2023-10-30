@@ -120,18 +120,6 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-asynckit@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmmirror.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
-  integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
-
-axios@^0.26.0:
-  version "0.26.1"
-  resolved "https://registry.npmmirror.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"
-  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
-  dependencies:
-    follow-redirects "^1.14.8"
-
 binary-extensions@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmmirror.com/binary-extensions/-/binary-extensions-2.2.0.tgz#75f502eeaf9ffde42fc98829645be4ea76bd9e2d"
@@ -159,13 +147,6 @@ braces@~3.0.2:
   optionalDependencies:
     fsevents "~2.3.2"
 
-combined-stream@^1.0.8:
-  version "1.0.8"
-  resolved "https://registry.npmmirror.com/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
-  integrity sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
-  dependencies:
-    delayed-stream "~1.0.0"
-
 csstype@^2.6.8:
   version "2.6.21"
   resolved "https://registry.npmmirror.com/csstype/-/csstype-2.6.21.tgz#2efb85b7cc55c80017c66a5ad7cbd931fda3a90e"
@@ -175,11 +156,6 @@ dat.gui@^0.7.9:
   version "0.7.9"
   resolved "https://registry.npmmirror.com/dat.gui/-/dat.gui-0.7.9.tgz#860cab06053b028e327820eabdf25a13cf07b17e"
   integrity sha512-sCNc1OHobc+Erc1HqiswYgHdVNpSJUlk/Hz8vzOCsER7rl+oF/4+v8GXFUyCgtXpoCX6+bnmg07DedLvBLwYKQ==
-
-delayed-stream@~1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmmirror.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
-  integrity sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==
 
 esbuild-android-64@0.15.17:
   version "0.15.17"
@@ -321,20 +297,6 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
-follow-redirects@^1.14.8:
-  version "1.15.2"
-  resolved "https://registry.npmmirror.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
-  integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
-
-form-data@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmmirror.com/form-data/-/form-data-4.0.0.tgz#93919daeaf361ee529584b9b31664dc12c9fa452"
-  integrity sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
-  dependencies:
-    asynckit "^0.4.0"
-    combined-stream "^1.0.8"
-    mime-types "^2.1.12"
-
 fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.npmmirror.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
@@ -400,11 +362,6 @@ is-number@^7.0.0:
   resolved "https://registry.npmmirror.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
-klona@^2.0.4:
-  version "2.0.5"
-  resolved "https://registry.npmmirror.com/klona/-/klona-2.0.5.tgz#d166574d90076395d9963aa7a928fabb8d76afbc"
-  integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
-
 magic-string@^0.25.7:
   version "0.25.9"
   resolved "https://registry.npmmirror.com/magic-string/-/magic-string-0.25.9.tgz#de7f9faf91ef8a1c91d02c2e5314c8277dbcdd1c"
@@ -412,40 +369,15 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.8"
 
-mime-db@1.52.0:
-  version "1.52.0"
-  resolved "https://registry.npmmirror.com/mime-db/-/mime-db-1.52.0.tgz#bbabcdc02859f4987301c856e3387ce5ec43bf70"
-  integrity sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==
-
-mime-types@^2.1.12:
-  version "2.1.35"
-  resolved "https://registry.npmmirror.com/mime-types/-/mime-types-2.1.35.tgz#381a871b62a734450660ae3deee44813f70d959a"
-  integrity sha512-ZDY+bPm5zTTF+YpCrAU9nK0UgICYPT0QtT1NZWFv4s++TNkcgVaT0g6+4R2uI4MjQjzysHB1zxuWL50hzaeXiw==
-  dependencies:
-    mime-db "1.52.0"
-
 nanoid@^3.3.4:
   version "3.3.4"
   resolved "https://registry.npmmirror.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
-neo-async@^2.6.2:
-  version "2.6.2"
-  resolved "https://registry.npmmirror.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
-  integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
-
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.npmmirror.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
-
-openai@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmmirror.com/openai/-/openai-3.1.0.tgz#13bfb228cf777155b882c2deb3a03bc5094cb7b3"
-  integrity sha512-v5kKFH5o+8ld+t0arudj833Mgm3GcgBnbyN9946bj6u7bvel4Yg6YFz2A4HLIYDzmMjIo0s6vSG9x73kOwvdCg==
-  dependencies:
-    axios "^0.26.0"
-    form-data "^4.0.0"
 
 path-parse@^1.0.7:
   version "1.0.7"
@@ -493,14 +425,6 @@ rollup@^2.79.1:
   integrity sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==
   optionalDependencies:
     fsevents "~2.3.2"
-
-sass-loader@^13.2.0:
-  version "13.2.0"
-  resolved "https://registry.npmmirror.com/sass-loader/-/sass-loader-13.2.0.tgz#80195050f58c9aac63b792fa52acb6f5e0f6bdc3"
-  integrity sha512-JWEp48djQA4nbZxmgC02/Wh0eroSUutulROUusYJO9P9zltRbNN80JCBHqRGzjd4cmZCa/r88xgfkjGD0TXsHg==
-  dependencies:
-    klona "^2.0.4"
-    neo-async "^2.6.2"
 
 sass@^1.56.2:
   version "1.56.2"

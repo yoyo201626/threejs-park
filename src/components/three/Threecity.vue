@@ -1,12 +1,12 @@
 <template>
   <div class="scene">
     <div id="jindu-text-con">
-      正在加载模型请稍等：<span id="jindu-text"></span>
+      正在加载模型请稍等，如果卡住，请刷新网页：<span id="jindu-text"></span>
       <div class="jindu-con">
         <div id="jindu"></div>
       </div>
     </div>
-    <video id="videoContainer" style="position:absolute;top:0px;left:0px;z-index:100;visibility: hidden"></video>
+    <video id="videoContainer" style="position:absolute;top:0;left:0;z-index:100;visibility: hidden"></video>
     <div class="scene" id="viewer-container"></div>
     <div class="panel">
       <div class="main">
@@ -228,9 +228,9 @@ export default {
         oldOffice = office.object.clone()
         let box = office.getBox()
         labels.addCss2dLabel({
-          x: box.max.x / 2,
+          x: office.object.position.x,
           y: box.max.y,
-          z: box.max.z
+          z: box.max.z - 5
         }, `<span class="label">${_model.object.name}</span>`)
         gsap.to(labels.label.position, {
           y: box.max.y + 2,
@@ -250,10 +250,11 @@ export default {
         _model.object.name = '实验楼'
         gltf75 = _model.object.clone()
         let box = _model.getBox()
+        console.log(_model)
         labels.addCss2dLabel({
-          x: box.max.x,
+          x: _model.object.position.x,
           y: box.max.y,
-          z: box.max.z
+          z: _model.object.position.z
         }, `<span class="label">${_model.object.name}</span>`)
         gsap.to(labels.label.position, {
           y: box.max.y + 2,
